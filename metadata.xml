@@ -1,0 +1,82 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<ms:MetadataRecord xmlns:ms="http://w3id.org/meta-share/meta-share/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://w3id.org/meta-share/meta-share/ ../Schema/ELG-SHARE.xsd">
+        <ms:DescribedEntity>
+                <ms:LanguageResource>
+                        <ms:entityType>LanguageResource</ms:entityType>
+                        <ms:resourceName xml:lang="en">qaptnet: QA with BERT in Portuguese</ms:resourceName>
+                        <ms:resourceShortName xml:lang="en">qaptnet</ms:resourceShortName>
+                        <ms:description xml:lang="en">qaptnet is an implementation of the BERT model, fined tuned for question-answering tasks, trained on a Portuguese dataset. In an nutshell the goal of the model is: given a question, and a context, i.e. a snippet of text that contains the answer to the given question, output the start and end token index that spans the answer. </ms:description>
+                        <ms:LRIdentifier ms:LRIdentifierScheme="http://w3id.org/meta-share/meta-share/elg">ELG id automatically assigned</ms:LRIdentifier>
+                        <ms:version>1.0.0</ms:version>
+                        <ms:additionalInfo>
+                                <ms:landingPage>https://github.com/nunorc/qaptnet</ms:landingPage>
+                        </ms:additionalInfo>
+                        <ms:keyword xml:lang="en">Question answering</ms:keyword>
+                        <ms:keyword xml:lang="en">QA</ms:keyword>
+                		<ms:keyword xml:lang="en">Portuguese</ms:keyword>
+                        <ms:resourceProvider>
+                                <ms:Organization>
+                                        <ms:actorType>Organization</ms:actorType>
+                                        <ms:organizationName xml:lang="en">GRADIANT</ms:organizationName>
+                                        <ms:OrganizationIdentifier ms:OrganizationIdentifierScheme="http://w3id.org/meta-share/meta-share/elg">??ver ejemplo??</ms:OrganizationIdentifier>
+                                        <ms:website>http://gradiant.org/</ms:website>
+                                </ms:Organization>
+                        </ms:resourceProvider>
+                        <ms:publicationDate>??</ms:publicationDate>
+                        <ms:resourceCreator>
+                                <ms:Person>
+                                        <ms:actorType>ms:Person</ms:actorType>
+                                    <ms:surname xml:lang="en">Ramos Carvalho</ms:surname>
+                                    <ms:givenName xml:lang="en">Nuno</ms:givenName>
+                                </ms:Person>
+                        </ms:resourceCreator>
+                        <ms:intendedApplication>
+                                <ms:LTClassRecommended>http://w3id.org/meta-share/omtd-share/QuestionAnswering</ms:LTClassRecommended>
+                        </ms:intendedApplication>
+                        <ms:LRSubclass>
+                                <ms:ToolService>
+                                        <ms:lrType>ToolService</ms:lrType>
+                                        <ms:function>
+                                                <ms:LTClassRecommended>http://w3id.org/meta-share/omtd-share/QuestionAnswering</ms:LTClassRecommended>
+                                        </ms:function>
+                                        <ms:SoftwareDistribution>
+                                                <ms:SoftwareDistributionForm>http://w3id.org/meta-share/meta-share/dockerImage</ms:SoftwareDistributionForm>
+                                                <ms:executionLocation>http://localhost:8866/predict_json</ms:executionLocation> <!--?localhost?-->
+                                                <ms:dockerDownloadLocation>mt4elg-de-en</ms:dockerDownloadLocation> <!--??-->
+                                                <ms:additionalHWRequirements>limits_memory: 2048Mi limits_cpu: 1.5</ms:additionalHWRequirements> <!--??-->
+                                                <ms:licenceTerms> <!--????-->
+                                                        <ms:licenceTermsName xml:lang="en">MIT</ms:licenceTermsName>
+                                                        <ms:licenceTermsURL>https://opensource.org/licenses/mit-license.php</ms:licenceTermsURL>
+                                                        <ms:conditionOfUse>http://w3id.org/meta-share/meta-share/attribution</ms:conditionOfUse>
+                                                </ms:licenceTerms>
+                                        </ms:SoftwareDistribution>
+                                        <ms:implementationLanguage>Python</ms:implementationLanguage>
+                                        <ms:languageDependent>True</ms:languageDependent>
+                                        <ms:inputContentResource>
+                                                <ms:processingResourceType>http://w3id.org/meta-share/meta-share/file1</ms:processingResourceType> <!--file1 indica que se envia un fichero. Solo se puede añadir un tipo?-->
+                                                <ms:language>
+                                                        <ms:languageTag>pt</ms:languageTag>
+                                                        <ms:languageId>pt</ms:languageId>
+                                                </ms:language>
+                                                <ms:mediaType>http://w3id.org/meta-share/meta-share/text</ms:mediaType>
+                                                <ms:dataFormat>http://w3id.org/meta-share/omtd-share/Json</ms:dataFormat>
+                                                <ms:characterEncoding>http://w3id.org/meta-share/meta-share/UTF-8</ms:characterEncoding>
+                                        </ms:inputContentResource>
+                                        <ms:outputResource>
+                                                <ms:processingResourceType>http://w3id.org/meta-share/meta-share/file1</ms:processingResourceType>
+                                                <ms:language>
+                                                        <ms:languageTag>pt</ms:languageTag>
+                                                        <ms:languageId>pt</ms:languageId>
+                                                </ms:language>
+                                                <ms:mediaType>http://w3id.org/meta-share/meta-share/text</ms:mediaType>
+                                                <ms:dataFormat>http://w3id.org/meta-share/omtd-share/Json</ms:dataFormat>
+                                                <ms:characterEncoding>http://w3id.org/meta-share/meta-share/UTF-8</ms:characterEncoding>
+                                        </ms:outputResource>
+                                        <ms:trl>http://w3id.org/meta-share/meta-share/trl4</ms:trl> <!--?? not mandatory-->
+                                        <ms:evaluated>false</ms:evaluated>
+                                </ms:ToolService>
+                        </ms:LRSubclass>
+                </ms:LanguageResource>
+        </ms:DescribedEntity>
+</ms:MetadataRecord>
