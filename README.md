@@ -48,8 +48,11 @@ curl -X POST  http://0.0.0.0:8866/processText/service -H 'Content-Type: applicat
    2) If the response is incorrect: You will see in the logs that the request is proxied to your API, that it answers, but the test tool does not accept that response. You must analyze the logs.
 
 
+# Original repository
+ - [Link of original repository](https://github.com/nunorc/qaptnet) 
+ - Original project has a MIT License
+
 # Original repository README
- - https://github.com/nunorc/qaptnet 
 
 **qaptnet** is an implementation of the [BERT](https://github.com/google-research/bert) model,
 fined tuned for question-answering tasks, trained on a Portuguese dataset. The model is
@@ -69,7 +72,8 @@ model. Check the `requirements.txt` file for the package dependencies.
 
 ## Synopsis
 
-```python
+```
+python
 # import the model
 from qaptnet import qaptnet
 
@@ -85,7 +89,8 @@ ptnet.query(context = context, question = question)
 The following snippets illustrate some examples of queries to the model, for the question
 and corresponding context.
 
-```python
+```
+python
 context = """Arquitetonicamente, a escola tem um caráter católico. No topo da cúpula de ouro
 do edifício principal é uma estátua de ouro da Virgem Maria. Imediatamente em frente ao edifício
 principal e de frente para ele, é uma estátua de cobre de Cristo com os braços erguidos com a
@@ -98,12 +103,14 @@ através de 3 estátuas e da Cúpula de Ouro), é um estátua de pedra simples e
 question = 'A quem a Virgem Maria supostamente apareceu em 1858 em Lourdes, na França?'
 ```
 
-```python
+```
+python
 >>> ptnet.query(context=context, question=question)
 'Santa Bernadette Soubirous'
 ```
 
-```python
+```
+python
 context = """Beyoncé Giselle Knowles-Carter (nascida em 4 de setembro de 1981) é uma cantora
 americana, compositora, produtora de discos e atriz. Nascida e criada em Houston, Texas, ela se
 apresentou em várias competições de canto e dança quando criança, e alcançou a fama no final dos
@@ -116,12 +123,14 @@ Billboard Hot 100 &quot;Crazy in Love&quot; e &quot;Baby Boy&quot; ."""
 question = 'Em que cidade e estado Beyonce cresceu?'
 ```
 
-```python
+```
+python
 >>> ptnet.query(context=context, question=question)
 'Houston, Texas'
 ```
 
-```python
+```
+python
 context = """Em 17 de Outubro desse ano, a Comissão da Administração dos Bens pertencentes ao
 Estado inquire junto da Sociedade Martins Sarmento se o seu edifício se encontra em condições de
 segurança tais que possa, sem perigo, receber e conservar em exposição os objectos de valor
@@ -135,7 +144,8 @@ entanto, o Arquivo só nasceria em 1931, através decreto nº 19.952, de 27 de J
 question = 'Em que ano nasceu o arquivo?'
 ```
 
-```python
+```
+python
 >>> ptnet.query(context=context, question=question)
 '1931'
 ```
