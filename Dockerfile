@@ -33,3 +33,7 @@ WORKDIR /qaptnet/
 COPY ./serve.py /qaptnet/serve.py
 CMD ["python3", "serve.py"]
 
+RUN ["python3", "-c", "from qaptnet.qaptnet import qaptnet; qaptnet()"]
+
+ENV TRANSFORMERS_OFFLINE=1
+
