@@ -20,7 +20,7 @@ sh docker-build.sh
 ```
 2) Run the container:
 ```
-docker run --rm -p 8866:8866 elg_qapnet:2.0
+docker run --rm -p 8866:8866 elg_qapnet:1.0.1
 ```
 3) Make requests to the API:
 - Create a JSON file with the fields `context` and `question`, then:
