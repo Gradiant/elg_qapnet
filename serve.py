@@ -17,16 +17,32 @@ ptnet = qaptnet()
 def predict_json():
 
     data = request.get_json()
-    if (data["type"] != "text") or ("content" not in data) or ("params" not in data):
+    if data["type"] != "text":
+        # Standard message code for unsupported response type
+        return generate_failure_response(
+            status=400,
+            code="elg.request.type.unsupported",
+            text="Request type {0} not supported by this service",
+            params=[data["type"]],
+            detail=None,
+        )
+
+    if "content" not in data:
         return invalid_request_error(
             None,
-            error="One of the following fields of the request is absent: [text, content, params]",
         )
 
     content = data.get("content")
-    params = data["params"]
+    params = data.get("params", {})
     if "question" not in params:
-        return invalid_request_error(None, error="Question parameter is absent")
+        # Standard message code for missing parameter
+        return generate_failure_response(
+            status=400,
+            code="elg.request.parameter.missing",
+            text="Required parameter {0} missing from request",
+            params=["question"],
+            detail=None,
+        )
 
     context = content
     question = params["question"]
@@ -36,12 +52,15 @@ def predict_json():
         output = generate_successful_text_response(answer)
         return output
     except Exception as e:
-        text = "An unexpected error ocurred during prediction. If your input text is too long, this may be the cause."
+        text = (
+            "Unexpected error. If your input text is too long, this may be the cause."
+        )
+        # Standard message for internal error - the real error message goes in params
         return generate_failure_response(
-            status=404,
+            status=500,
             code="elg.service.internalError",
-            text=text,
-            params=None,
+            text="Internal error during processing: {0}",
+            params=[text],
             detail=e.__str__(),
         )
 
