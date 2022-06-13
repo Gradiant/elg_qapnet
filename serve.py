@@ -5,6 +5,8 @@ from qaptnet.qaptnet import qaptnet
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 APP_ROOT = "./"
+app.config["JSON_ADD_STATUS"] = False
+app.config["JSON_SORT_KEYS"] = False
 app.config["APPLICATION_ROOT"] = APP_ROOT
 app.config["UPLOAD_FOLDER"] = "files/"
 
