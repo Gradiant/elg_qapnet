@@ -1,82 +1,151 @@
-
-<?xml version="1.0" encoding="UTF-8"?>
-<ms:MetadataRecord xmlns:ms="http://w3id.org/meta-share/meta-share/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://w3id.org/meta-share/meta-share/ ../Schema/ELG-SHARE.xsd">
-        <ms:DescribedEntity>
-                <ms:LanguageResource>
-                        <ms:entityType>LanguageResource</ms:entityType>
-                        <ms:resourceName xml:lang="en">qaptnet: QA with BERT in Portuguese</ms:resourceName>
-                        <ms:resourceShortName xml:lang="en">qaptnet</ms:resourceShortName>
-                        <ms:description xml:lang="en">qaptnet is an implementation of the BERT model, fined tuned for question-answering tasks, trained on a Portuguese dataset. In an nutshell the goal of the model is: given a question, and a context, i.e. a snippet of text that contains the answer to the given question, output the start and end token index that spans the answer. </ms:description>
-                        <ms:LRIdentifier ms:LRIdentifierScheme="http://w3id.org/meta-share/meta-share/elg">ELG id automatically assigned</ms:LRIdentifier>
-                        <ms:version>1.0.0</ms:version>
-                        <ms:additionalInfo>
-                                <ms:landingPage>https://github.com/nunorc/qaptnet</ms:landingPage>
-                        </ms:additionalInfo>
-                        <ms:keyword xml:lang="en">Question answering</ms:keyword>
-                        <ms:keyword xml:lang="en">QA</ms:keyword>
-                		<ms:keyword xml:lang="en">Portuguese</ms:keyword>
-                        <ms:resourceProvider>
-                                <ms:Organization>
-                                        <ms:actorType>Organization</ms:actorType>
-                                        <ms:organizationName xml:lang="en">GRADIANT</ms:organizationName>
-                                        <ms:OrganizationIdentifier ms:OrganizationIdentifierScheme="http://w3id.org/meta-share/meta-share/elg">??ver ejemplo??</ms:OrganizationIdentifier>
-                                        <ms:website>http://gradiant.org/</ms:website>
-                                </ms:Organization>
-                        </ms:resourceProvider>
-                        <ms:publicationDate>??</ms:publicationDate>
-                        <ms:resourceCreator>
-                                <ms:Person>
-                                        <ms:actorType>ms:Person</ms:actorType>
-                                    <ms:surname xml:lang="en">Ramos Carvalho</ms:surname>
-                                    <ms:givenName xml:lang="en">Nuno</ms:givenName>
-                                </ms:Person>
-                        </ms:resourceCreator>
-                        <ms:intendedApplication>
-                                <ms:LTClassRecommended>http://w3id.org/meta-share/omtd-share/QuestionAnswering</ms:LTClassRecommended>
-                        </ms:intendedApplication>
-                        <ms:LRSubclass>
-                                <ms:ToolService>
-                                        <ms:lrType>ToolService</ms:lrType>
-                                        <ms:function>
-                                                <ms:LTClassRecommended>http://w3id.org/meta-share/omtd-share/QuestionAnswering</ms:LTClassRecommended>
-                                        </ms:function>
-                                        <ms:SoftwareDistribution>
-                                                <ms:SoftwareDistributionForm>http://w3id.org/meta-share/meta-share/dockerImage</ms:SoftwareDistributionForm>
-                                                <ms:executionLocation>http://localhost:8866/predict_json</ms:executionLocation> <!--?localhost?-->
-                                                <ms:dockerDownloadLocation>mt4elg-de-en</ms:dockerDownloadLocation> <!--??-->
-                                                <ms:additionalHWRequirements>limits_memory: 2048Mi limits_cpu: 1.5</ms:additionalHWRequirements> <!--??-->
-                                                <ms:licenceTerms> <!--????-->
-                                                        <ms:licenceTermsName xml:lang="en">MIT</ms:licenceTermsName>
-                                                        <ms:licenceTermsURL>https://opensource.org/licenses/mit-license.php</ms:licenceTermsURL>
-                                                        <ms:conditionOfUse>http://w3id.org/meta-share/meta-share/attribution</ms:conditionOfUse>
-                                                </ms:licenceTerms>
-                                        </ms:SoftwareDistribution>
-                                        <ms:implementationLanguage>Python</ms:implementationLanguage>
-                                        <ms:languageDependent>True</ms:languageDependent>
-                                        <ms:inputContentResource>
-                                                <ms:processingResourceType>http://w3id.org/meta-share/meta-share/file1</ms:processingResourceType> <!--file1 indica que se envia un fichero. Solo se puede añadir un tipo?-->
-                                                <ms:language>
-                                                        <ms:languageTag>pt</ms:languageTag>
-                                                        <ms:languageId>pt</ms:languageId>
-                                                </ms:language>
-                                                <ms:mediaType>http://w3id.org/meta-share/meta-share/text</ms:mediaType>
-                                                <ms:dataFormat>http://w3id.org/meta-share/omtd-share/Json</ms:dataFormat>
-                                                <ms:characterEncoding>http://w3id.org/meta-share/meta-share/UTF-8</ms:characterEncoding>
-                                        </ms:inputContentResource>
-                                        <ms:outputResource>
-                                                <ms:processingResourceType>http://w3id.org/meta-share/meta-share/file1</ms:processingResourceType>
-                                                <ms:language>
-                                                        <ms:languageTag>pt</ms:languageTag>
-                                                        <ms:languageId>pt</ms:languageId>
-                                                </ms:language>
-                                                <ms:mediaType>http://w3id.org/meta-share/meta-share/text</ms:mediaType>
-                                                <ms:dataFormat>http://w3id.org/meta-share/omtd-share/Json</ms:dataFormat>
-                                                <ms:characterEncoding>http://w3id.org/meta-share/meta-share/UTF-8</ms:characterEncoding>
-                                        </ms:outputResource>
-                                        <ms:trl>http://w3id.org/meta-share/meta-share/trl4</ms:trl> <!--?? not mandatory-->
-                                        <ms:evaluated>false</ms:evaluated>
-                                </ms:ToolService>
-                        </ms:LRSubclass>
-                </ms:LanguageResource>
-        </ms:DescribedEntity>
+<?xml version="1.0" encoding="utf-8"?>
+<ms:MetadataRecord xmlns:ms="http://w3id.org/meta-share/meta-share/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://w3id.org/meta-share/meta-share/ https://live.european-language-grid.eu/metadata-schema/ELG-SHARE.xsd">
+  <ms:MetadataRecordIdentifier ms:MetadataRecordIdentifierScheme="http://purl.org/spar/datacite/url">https://live.european-language-grid.eu/catalogue/tool-service/18854?format=elg</ms:MetadataRecordIdentifier>
+  <ms:metadataCreationDate>2022-06-09</ms:metadataCreationDate>
+  <ms:metadataLastDateUpdated>2022-06-15</ms:metadataLastDateUpdated>
+  <ms:metadataCurator>
+    <ms:actorType>Person</ms:actorType>
+    <ms:surname xml:lang="en">Centro Tecnolóxico de Telecomunicións de Galicia</ms:surname>
+    <ms:givenName xml:lang="en">Gradiant</ms:givenName>
+  </ms:metadataCurator>
+  <ms:compliesWith>http://w3id.org/meta-share/meta-share/ELG-SHARE</ms:compliesWith>
+  <ms:metadataCreator>
+    <ms:actorType>Person</ms:actorType>
+    <ms:surname xml:lang="en">Centro Tecnolóxico de Telecomunicións de Galicia</ms:surname>
+    <ms:givenName xml:lang="en">Gradiant</ms:givenName>
+  </ms:metadataCreator>
+  <ms:DescribedEntity>
+    <ms:LanguageResource>
+      <ms:entityType>LanguageResource</ms:entityType>
+      <ms:resourceName xml:lang="en">qaptnet - Question-Answering in Portuguese</ms:resourceName>
+      <ms:resourceShortName xml:lang="en">qaptnet</ms:resourceShortName>
+      <ms:description xml:lang="en">&lt;p&gt;&lt;strong&gt;qaptnet&lt;/strong&gt; is an implementation of the &lt;a href="https://github.com/google-research/bert" target="_blank"&gt;BERT&lt;/a&gt; model, fined tuned for question-answering tasks, trained on a Portuguese dataset. Its objective is, given a question and a context, i.e. a snippet of text that contains the answer to the given question, output the start and end token index that spans the answer.&lt;/p&gt;</ms:description>
+      <ms:version>1.0.1</ms:version>
+      <ms:versionDate>2022-06-09</ms:versionDate>
+      <ms:additionalInfo>
+        <ms:landingPage>https://github.com/nunorc/qaptnet</ms:landingPage>
+      </ms:additionalInfo>
+      <ms:additionalInfo>
+        <ms:landingPage>https://github.com/Gradiant/elg_qapnet</ms:landingPage>
+      </ms:additionalInfo>
+      <ms:additionalInfo>
+        <ms:email>gradiant-nlp@gradiant.org</ms:email>
+      </ms:additionalInfo>
+      <ms:contact>
+        <ms:Organization>
+          <ms:actorType>Organization</ms:actorType>
+          <ms:organizationName xml:lang="en">Galician Research and Development Center in Advanced Telecommunications (Gradiant)</ms:organizationName>
+          <ms:organizationName xml:lang="gl">Centro Tecnolóxico de Telecomunicacións de Galicia (Gradiant)</ms:organizationName>
+          <ms:organizationShortName xml:lang="en">Gradiant</ms:organizationShortName>
+        </ms:Organization>
+      </ms:contact>
+      <ms:keyword xml:lang="en">Question-answering</ms:keyword>
+      <ms:keyword xml:lang="en">portuguese</ms:keyword>
+      <ms:keyword xml:lang="en">Q&amp;A</ms:keyword>
+      <ms:resourceProvider>
+        <ms:Organization>
+          <ms:actorType>Organization</ms:actorType>
+          <ms:organizationName xml:lang="en">Galician Research and Development Center in Advanced Telecommunications (Gradiant)</ms:organizationName>
+          <ms:organizationName xml:lang="gl">Centro Tecnolóxico de Telecomunicacións de Galicia (Gradiant)</ms:organizationName>
+          <ms:organizationShortName xml:lang="en">Gradiant</ms:organizationShortName>
+        </ms:Organization>
+      </ms:resourceProvider>
+      <ms:resourceCreator>
+        <ms:Person>
+          <ms:actorType>Person</ms:actorType>
+          <ms:surname xml:lang="en">Ramos Carvalho</ms:surname>
+          <ms:givenName xml:lang="en">Nuno</ms:givenName>
+        </ms:Person>
+      </ms:resourceCreator>
+      <ms:fundingProject>
+        <ms:projectName xml:lang="en">Microservices at your service - bridging the gap between NLP research and industry</ms:projectName>
+        <ms:projectShortName xml:lang="en">Microservices</ms:projectShortName>
+        <ms:website>https://www.lingsoft.fi/en/microservices-at-your-service-bridging-gap-between-nlp-research-and-industry</ms:website>
+        <ms:grantNumber>2020-EU-IA-0046</ms:grantNumber>
+        <ms:fundingType>http://w3id.org/meta-share/meta-share/euFunds</ms:fundingType>
+        <ms:funder>
+          <ms:Organization>
+            <ms:actorType>Organization</ms:actorType>
+            <ms:organizationName xml:lang="en">European Commission</ms:organizationName>
+            <ms:website>https://ec.europa.eu/info/index_en</ms:website>
+          </ms:Organization>
+        </ms:funder>
+      </ms:fundingProject>
+      <ms:intendedApplication>
+        <ms:LTClassRecommended>http://w3id.org/meta-share/omtd-share/QuestionAnswering</ms:LTClassRecommended>
+      </ms:intendedApplication>
+      <ms:LRSubclass>
+        <ms:ToolService>
+          <ms:lrType>ToolService</ms:lrType>
+          <ms:function>
+            <ms:LTClassRecommended>http://w3id.org/meta-share/omtd-share/QuestionAnswering</ms:LTClassRecommended>
+          </ms:function>
+          <ms:SoftwareDistribution>
+            <ms:SoftwareDistributionForm>http://w3id.org/meta-share/meta-share/dockerImage</ms:SoftwareDistributionForm>
+            <ms:executionLocation>http://0.0.0.0:8866/predict_json</ms:executionLocation>
+            <ms:dockerDownloadLocation>gradiant/elg_qapnet:1.0.1</ms:dockerDownloadLocation>
+            <ms:privateResource>false</ms:privateResource>
+            <ms:additionalHWRequirements>limits_memory: 2Gi</ms:additionalHWRequirements>
+            <ms:licenceTerms>
+              <ms:licenceTermsName xml:lang="en">Mozilla Public License 2.0</ms:licenceTermsName>
+              <ms:licenceTermsURL>http://www.mozilla.org/MPL/2.0/</ms:licenceTermsURL>
+              <ms:licenceTermsURL>https://opensource.org/licenses/MPL-2.0</ms:licenceTermsURL>
+              <ms:licenceTermsURL>https://spdx.org/licenses/MPL-2.0.html</ms:licenceTermsURL>
+              <ms:conditionOfUse>http://w3id.org/meta-share/meta-share/unspecified</ms:conditionOfUse>
+              <ms:LicenceIdentifier ms:LicenceIdentifierScheme="http://w3id.org/meta-share/meta-share/SPDX">MPL-2.0</ms:LicenceIdentifier>
+            </ms:licenceTerms>
+          </ms:SoftwareDistribution>
+          <ms:languageDependent>true</ms:languageDependent>
+          <ms:inputContentResource>
+            <ms:processingResourceType>http://w3id.org/meta-share/meta-share/userInputText</ms:processingResourceType>
+            <ms:language>
+              <ms:languageTag>pt</ms:languageTag>
+              <ms:languageId>pt</ms:languageId>
+              <ms:glottologCode>port1283</ms:glottologCode>
+            </ms:language>
+            <ms:mediaType>http://w3id.org/meta-share/meta-share/text</ms:mediaType>
+            <ms:dataFormat>
+              <ms:dataFormatRecommended>http://w3id.org/meta-share/omtd-share/Text</ms:dataFormatRecommended>
+            </ms:dataFormat>
+            <ms:sample>
+              <ms:sampleText>{"type":"text", "content":"Arquitetonicamente, a escola tem um caráter católico. No topo da cúpula de ouro do edifício principal é uma estátua de ouro da Virgem Maria.", "params":{"question":"De quem é a estatua de ouro?"}}'</ms:sampleText>
+              <ms:tag>Simple QA in Portuguese about a building</ms:tag>
+            </ms:sample>
+            <ms:sample>
+              <ms:sampleText>{"type":"text", "content":"O Manchester City conquistou, assim, o oitavo título do seu historial, com quatro dos cetros a serem conseguidos nas últimas cinco épocas, com exceção para 2019/20, que foi para o Liverpool.", "params":{"question":"Qual equipe conquistou o título em 2019/2020?"}}'</ms:sampleText>
+              <ms:tag>Simple QA in Portuguese about football</ms:tag>
+            </ms:sample>
+          </ms:inputContentResource>
+          <ms:outputResource>
+            <ms:processingResourceType>http://w3id.org/meta-share/meta-share/outputText</ms:processingResourceType>
+            <ms:language>
+              <ms:languageTag>pt</ms:languageTag>
+              <ms:languageId>pt</ms:languageId>
+              <ms:glottologCode>port1283</ms:glottologCode>
+            </ms:language>
+            <ms:mediaType>http://w3id.org/meta-share/meta-share/text</ms:mediaType>
+            <ms:dataFormat>
+              <ms:dataFormatRecommended>http://w3id.org/meta-share/omtd-share/Json</ms:dataFormatRecommended>
+            </ms:dataFormat>
+          </ms:outputResource>
+          <ms:mlModel>
+            <ms:resourceName xml:lang="en">qaptnet</ms:resourceName>
+          </ms:mlModel>
+          <ms:developmentFramework>
+            <ms:DevelopmentFrameworkRecommended>http://w3id.org/meta-share/meta-share/transformer</ms:DevelopmentFrameworkRecommended>
+          </ms:developmentFramework>
+          <ms:implementationLanguage>Python</ms:implementationLanguage>
+          <ms:evaluated>false</ms:evaluated>
+          <ms:parameter>
+            <ms:parameterName>question</ms:parameterName>
+            <ms:parameterLabel xml:lang="en">Question</ms:parameterLabel>
+            <ms:parameterDescription xml:lang="en">The question whose answer may be found in the context</ms:parameterDescription>
+            <ms:parameterType>http://w3id.org/meta-share/meta-share/string</ms:parameterType>
+            <ms:optional>false</ms:optional>
+            <ms:multiValue>false</ms:multiValue>
+          </ms:parameter>
+        </ms:ToolService>
+      </ms:LRSubclass>
+    </ms:LanguageResource>
+  </ms:DescribedEntity>
 </ms:MetadataRecord>
